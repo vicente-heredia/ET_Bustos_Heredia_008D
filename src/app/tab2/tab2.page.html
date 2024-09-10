@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-card style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <ion-card-title>Mis Clases</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <ion-segment [(ngModel)]="selectedDay">
+        <ion-segment-button value="lunes">Lunes</ion-segment-button>
+        <ion-segment-button value="martes">Martes</ion-segment-button>
+        <ion-segment-button value="miércoles">Miércoles</ion-segment-button>
+        <ion-segment-button value="jueves">Jueves</ion-segment-button>
+        <ion-segment-button value="viernes">Viernes</ion-segment-button>
+      </ion-segment>
+
+      <ion-item *ngFor="let clase of getClassesForDay(selectedDay)">
+        <ion-icon name="book" slot="start"></ion-icon>
+        <ion-label>
+          {{ clase.horario }} - Sala: {{ clase.sala }}
+        </ion-label>
+        <ion-note slot="end" style="color: #666;">
+          Profesor: {{ clase.profesor }}
+        </ion-note>
+      </ion-item>
+      <ion-button fill="clear" (click)="marcarAsistencia()">
+        Marcar asistencia
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

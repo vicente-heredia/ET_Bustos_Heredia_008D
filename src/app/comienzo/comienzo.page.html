@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+      <img src="assets/duoclogo.svg" class="logo-app">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  
+  <div class="welcome-container" *ngIf="!cardVisible">
+    <div class="card">
+      <h1 class="welcome-title">Bienvenido a Duoc Alumnos! </h1>
+      <ion-button (click)="mostrarCard()" fill="solid" shape="round" color="primary" class="welcome-button">
+        Iniciar
+      </ion-button>
+    </div>
+  </div>
+
+  <div class="card-container" *ngIf="cardVisible">
+    <ion-card class="card-slide-in" [ngClass]="{'card-visible': cardVisible}">
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Email: </ion-label>
+          <ion-input type="email" placeholder="Ingrese su correo" name="correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Password: </ion-label>
+          <ion-input type="password" placeholder="Ingrese su password" name="password"></ion-input>
+        </ion-item>
+
+        <p style="font-size: 12px; margin-top: 10px;">¿No tienes cuenta? <a (click)="showRegister()">Registrarse</a></p>
+      </ion-card-content>
+
+      <div style="text-align: center;">
+        <ion-button (click)="login()" fill="solid" shape="round" color="primary" style="padding-bottom: 15px;">
+          Login
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+
+  <ion-footer>
+    <ion-toolbar color="primary">
+      <ion-title class="app-footer">App Estudiante</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+

@@ -1,0 +1,31 @@
+<ion-app>
+  <ion-menu contentId="main" menuId="first" side="end" type="overlay">
+    <ion-header>
+  <ion-toolbar color="primary" class="comienzo-toolbar">
+    <ion-buttons slot="start">
+        <ion-icon name="menu-outline" size="large" color="light"></ion-icon>
+    </ion-buttons>
+    <img src="assets/duoclogo.svg" alt="Logo App" class="logo-app" slot="end">
+  </ion-toolbar>
+</ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle *ngFor="let m of menu">
+          <ion-item [routerLink]="m.redirecTo" detail="true">
+            <ion-icon slot="start" [name]="m.icon" color="dark"></ion-icon>
+            <ion-label>{{ m.name }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer>
+      <ion-toolbar class="footer-toolbar">
+        <ion-title class="footer-title">Estudiante Duoc®</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

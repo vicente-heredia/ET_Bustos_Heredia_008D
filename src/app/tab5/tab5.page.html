@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+  <ion-card-header>
+    <ion-card-title>Configuraciones</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Idioma</ion-label>
+        <ion-select [(ngModel)]="language">
+          <ion-select-option value="es">Español</ion-select-option>
+          <ion-select-option value="en">Inglés</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Notificaciones</ion-label>
+        <ion-toggle [(ngModel)]="notifications"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Modo oscuro</ion-label>
+        <ion-toggle [(ngModel)]="darkMode"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Versión de la aplicación</ion-label>
+        <ion-text>{{ appVersion }}</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

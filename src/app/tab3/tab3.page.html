@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-searchbar placeholder="Buscar" ></ion-searchbar>
+
+  <ion-card *ngFor="let evento of eventos; let i = index" style="box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-input type="text" [(ngModel)]="evento.titulo" placeholder="Título del evento"></ion-input>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        <ion-label>Fecha:</ion-label>
+        <ion-input type="date" [(ngModel)]="evento.fecha"></ion-input>
+      </p>
+      <p>
+        <ion-label>Descripción:</ion-label>
+        <ion-textarea [(ngModel)]="evento.descripcion"></ion-textarea>
+      </p>
+    </ion-card-content>
+    <ion-button (click)="eliminarEvento(i)" size="small" fill="clear" color="danger" style="margin-top: 10px;">
+      <ion-icon name="trash-outline" slot="start" size="small"></ion-icon>
+      Eliminar
+    </ion-button>
+  </ion-card>
+
+  <ion-button (click)="agregarEvento()" expand="block" color="primary" shape="round" style="margin-top: 20px;">
+    <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+    Agregar nuevo evento
+  </ion-button>
+
+</ion-content>

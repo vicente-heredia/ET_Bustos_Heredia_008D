@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <div style="text-align: center; margin-top: 20px;">
+        <h2>¡Bienvenido a la App de Estudiantes!</h2>
+        <p style="font-size: 16px; color: #666;">Accede a tus clases, revisa tus recordatorios y más.</p>
+      </div>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <div style="display: flex; justify-content: space-around; margin-top: 5px;">
+        <ion-button (click)="mostrarClases()" expand="block" color="tertiary" shape="round">
+          <ion-icon  name="school-outline" slot="start"></ion-icon>
+          Mis Clases
+        </ion-button>
+  
+        <ion-button (click)="mostrarEventos()" expand="block" color="secondary" shape="round">
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          Recordatorios
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-top: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <ion-card-title>Notas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Si deseas ver tus notas, puedes presionar el botón a continuación:</p>
+      <div style="text-align: right; margin-top: 10px;">
+        <ion-button color="primary" shape="round" (click)="mostrarNotas()">Ver mis notas</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin-top: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <ion-card-title>Asistencia</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Si deseas ver tus clases y Registrar asistencia, puedes presionar el botón a continuación:</p>
+      <div style="text-align: right; margin-top: 10px;">
+        <ion-button color="primary" shape="round" (click)="mostrarClases()">Ver  asistencia</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+

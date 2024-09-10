@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Mis Notas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let calificacion of calificaciones">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ calificacion.materia }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="nota-container">
+              <div *ngFor="let nota of calificacion.calificaciones" class="nota-item">
+                <span class="nota-num">Nota Nº {{ nota.num }}</span>
+                <span class="nota-value"> : {{ nota.nota }}</span>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
