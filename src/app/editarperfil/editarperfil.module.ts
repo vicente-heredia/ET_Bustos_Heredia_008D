@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Tab7PageRoutingModule } from './tab7-routing.module';
+import { EditarperfilPageRoutingModule } from './editarperfil-routing.module';
 
-import { Tab7Page } from './tab7.page';
-import { ReactiveFormsModule } from '@angular/forms';
+import { EditarperfilPage } from './editarperfil.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
-    Tab7PageRoutingModule
+    EditarperfilPageRoutingModule
   ],
-  declarations: [Tab7Page]
+  declarations: [EditarperfilPage]
 })
-export class Tab7PageModule {}
+export class EditarperfilPageModule {}

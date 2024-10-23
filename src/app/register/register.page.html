@@ -5,36 +5,55 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card >
+  <ion-card>
     <ion-card-header>
       <ion-card-title>Registrarse</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
-        <ion-label position="floating">Nombre</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Apellido</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Correo</ion-label>
-        <ion-input type="email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Confirmar contraseña</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
+      <form [formGroup]="registroForm">
+        <ion-item>
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input type="text" formControlName="username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label>
+          <ion-input type="text" formControlName="rut"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" formControlName="apellido"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="email" formControlName="correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <ion-input type="password" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+        <div *ngIf="registroForm.get('password')?.value !== registroForm.get('confirmPassword')?.value && registroForm.get('confirmPassword')?.touched">
+          <ion-text color="danger">Las contraseñas no coinciden</ion-text>
+        </div>
+      </form>
     </ion-card-content>
     <div style="text-align: center;">
-      <ion-button (click)="register()" fill="solid" shape="round" color="primary" style="padding-bottom: 15px;">
+      <ion-button (click)="register()" [disabled]="!registroForm.valid || passwordsDontMatch()" fill="solid" shape="round" color="primary">
         Registrarse
       </ion-button>
     </div>
   </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title class="app-footer">App Estudiante</ion-title>
+  </ion-toolbar>
+</ion-footer>

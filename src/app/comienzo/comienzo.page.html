@@ -1,20 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-      <img src="assets/duoclogo.svg" class="logo-app">
+    <img src="assets/duoclogo.svg" class="logo-app">
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  
+<ion-content [fullscreen]="true">
+
+  <!-- Contenedor de bienvenida -->
   <div class="welcome-container" *ngIf="!cardVisible">
     <div class="card">
-      <h1 class="welcome-title">Bienvenido a Duoc Alumnos! </h1>
+      <h1 class="welcome-title">Bienvenido a Duoc Alumnos!</h1>
       <ion-button (click)="mostrarCard()" fill="solid" shape="round" color="primary" class="welcome-button">
         Iniciar
       </ion-button>
     </div>
   </div>
 
+  <!-- Contenedor de la tarjeta de login -->
   <div class="card-container" *ngIf="cardVisible">
     <ion-card class="card-slide-in" [ngClass]="{'card-visible': cardVisible}">
       <ion-card-header>
@@ -22,31 +24,68 @@
       </ion-card-header>
 
       <ion-card-content>
-        <ion-item>
-          <ion-label position="stacked">Email: </ion-label>
-          <ion-input type="email" placeholder="Ingrese su correo" name="correo"></ion-input>
-        </ion-item>
+        <form [formGroup]="loginForm">
 
-        <ion-item>
-          <ion-label position="stacked">Password: </ion-label>
-          <ion-input type="password" placeholder="Ingrese su password" name="password"></ion-input>
-        </ion-item>
+          <ion-item>
+             <ion-input type="text" placeholder="Username.." 
+                label="Nombre de usuario: " labelPlacement="floating"
+                formControlName="username">
+             </ion-input>
+          </ion-item>
+  
+          <div id="alerta" *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || 
+                    loginForm.get('username')?.touched)">
+              <div id="alerta" *ngIf="loginForm.get('username')?.hasError('required')">
+                *Username es obligatorio
+              </div>
+              <div id="alerta" *ngIf="loginForm.get('username')?.hasError('minlength')">
+                *Username debe tener mínimo 6 caracteres
+              </div>
+          </div>
+  
+  
+          <ion-item>
+            <ion-input type="password" placeholder="Password.." 
+               label="Contraseña: " labelPlacement="floating"
+               formControlName="password">
+            </ion-input>
+         </ion-item>
+  
+         <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || 
+                  loginForm.get('password')?.touched)">
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('required')">
+              *Password es obligatoria
+            </div>
+            <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+              *Password debe tener mínimo 8 caracteres
+            </div>
+         </div>
+  
+         <div style="text-align: center; margin-top:20px">
+          <ion-button (click)="login()" [disabled]="!loginForm.valid" fill="solid" shape="round" color="primary">
+            Iniciar Sesión
+          </ion-button>
+        </div>
 
-        <p style="font-size: 12px; margin-top: 10px;">¿No tienes cuenta? <a (click)="showRegister()">Registrarse</a></p>
+
+          <div style="text-align: center; margin-top:20px">
+            <ion-button (click)="irARegistro()" fill="outline" shape="round" color="secondary">
+              Registrar
+            </ion-button>
+          </div>
+
+        </form>
       </ion-card-content>
 
-      <div style="text-align: center;">
-        <ion-button (click)="login()" fill="solid" shape="round" color="primary" style="padding-bottom: 15px;">
-          Login
-        </ion-button>
-      </div>
     </ion-card>
   </div>
+
 
   <ion-footer>
     <ion-toolbar color="primary">
       <ion-title class="app-footer">App Estudiante</ion-title>
     </ion-toolbar>
   </ion-footer>
+
 </ion-content>
 

@@ -15,39 +15,53 @@
       <ion-card-title>Perfil del Estudiante</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <!-- Imagen de perfil -->
       <div style="text-align: center; margin-bottom: 20px;">
-        <ion-img [src]="student.photoUrl" style="border-radius: 50%; width: 100px; height: 100px;"></ion-img>
+        <ion-img [src]="user.photoUrl" style="border-radius: 50%; width: 100px; height: 100px;"></ion-img>
       </div>
 
-      <!-- Información del estudiante -->
       <ion-list>
         <ion-item>
           <ion-label>
+            <h2>Usuario:</h2>
+            <p>{{ user.username }}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
             <h2>Nombre:</h2>
-            <p>{{ student.name }}</p>
+            <p>{{ user.nombre }}</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>Correo Electrónico:</h2>
-            <p>{{ student.email }}</p>
+            <h2>Apellido:</h2>
+            <p>{{ user.apellido }}</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>Teléfono:</h2>
-            <p>{{ student.phone }}</p>
+            <h2>Rut:</h2>
+            <p>{{ user.rut }}</p>
           </ion-label>
         </ion-item>
         <ion-item>
           <ion-label>
-            <h2>Carrera:</h2>
-            <p>{{ student.major }}</p>
+            <h2>E-Mail:</h2>
+            <p>{{ user.email }}</p>
           </ion-label>
         </ion-item>
       </ion-list>
+
+      <ion-button expand="full" (click)="editarPerfil()" style="margin-top: 20px;">
+        Editar Perfil
+      </ion-button>
+      
+      <ion-button expand="full" color="danger" (click)="logout()" style="margin-top: 10px;">
+        Cerrar Sesión
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
+
+  
 

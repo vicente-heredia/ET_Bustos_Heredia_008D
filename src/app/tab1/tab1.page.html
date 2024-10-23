@@ -34,6 +34,22 @@
   </ion-card>
 
   <ion-card style="margin-top: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <swiper [pagination]="true" [navigation]="true" [loop]="true" [autoplay]="{ delay: 3000 }" class="mySwiper">
+      <ng-template swiperSlide>
+        <img src="assets/sede.jpeg" alt="Image 1">
+      </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/personas.jpg" alt="Image 2">
+      </ng-template>
+      <ng-template swiperSlide>
+        <img src="assets/personas2.jpg" alt="Image 3">
+      </ng-template>
+    </swiper>
+  </ion-card>
+
+  
+
+  <ion-card style="margin-top: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
     <ion-card-header>
       <ion-card-title>Notas</ion-card-title>
     </ion-card-header>
@@ -48,13 +64,13 @@
 
   <ion-card style="margin-top: 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
     <ion-card-header>
-      <ion-card-title>Asistencia</ion-card-title>
+      <ion-card-title>Mis Clases</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      <p>Si deseas ver tus clases y Registrar asistencia, puedes presionar el botón a continuación:</p>
+      <p>Si deseas ver tus clases , puedes presionar el botón a continuación:</p>
       <div style="text-align: right; margin-top: 10px;">
-        <ion-button color="primary" shape="round" (click)="mostrarClases()">Ver  asistencia</ion-button>
+        <ion-button color="primary" shape="round" (click)="mostrarClases()">Ver Mis Clases</ion-button>
       </div>
     </ion-card-content>
   </ion-card>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutorizadoGuard } from './guards/autorizado.guard';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'editarperfil',
+    loadChildren: () => import('./editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
   },
   
   

@@ -26,3 +26,68 @@ ion-card {
   ion-label {
     font-size: 12px;
   }
+  
+  .text-center {
+    text-align: center;
+    margin: 16px 0; // Espaciado vertical alrededor del título
+  }
+
+  .titulo-clases {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3880ff; // Color del tema principal
+    margin-bottom: 10px; // Espaciado debajo del título
+  }
+  
+  .mis-clases-card {
+    margin: 20px; // Espaciado alrededor de la tarjeta principal
+    background-color: #f8f9fa; // Color de fondo claro para la tarjeta
+    border-radius: 12px; // Esquinas redondeadas
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+  }
+  
+  ion-card {
+    margin-bottom: 10px; // Espaciado entre tarjetas individuales
+  }
+  .card-content {
+    display: flex;
+    justify-content: center; /* Centra el contenido de la tarjeta */
+    align-items: center;     /* Alinea verticalmente */
+  }
+  
+  
+  .qr-code {
+    width: 200px;   /* Ajusta el tamaño según sea necesario */
+    height: 200px;  /* Ajusta el tamaño según sea necesario */
+    margin: 0 auto; /* Centra el QR dentro de su contenedor */
+  }
+  
+  .qr-container {
+    display: flex;           // Permite usar flexbox
+    justify-content: center; // Centra el QR
+    align-items: center;     // Alinea verticalmente
+  }
+  
+  ion-item {
+    display: flex;
+    justify-content: space-between;  // Distribuye espacio entre el texto y el QR
+    align-items: center;              // Alinea verticalmente
+  }
+  
+  ion-avatar {
+    display: flex;
+    align-items: center;              // Alinea verticalmente
+  }
+
+  .mis-clases-card {
+    padding: 20px; /* Aumenta el relleno */
+    margin: 10px; /* Aumenta el margen */
+  }
+  
+  .asignatura-title {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el título y el QR */
+    align-items: center;             /* Alinea verticalmente */
+  }
+

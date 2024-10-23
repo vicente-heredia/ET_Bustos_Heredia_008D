@@ -31,7 +31,7 @@ export class AppComponent {
     },
     {
       icon:'calendar-number-outline',
-      name:'Asistencia',
+      name:'Justificar',
       redirecTo:'/tabs/tab7'
     },
     {
