@@ -1,0 +1,39 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" class="tab-bar">
+    <ion-tab-button tab="tab1" href="/tabs/tab1">
+      <ion-icon aria-hidden="true" name="home-outline" color="light"></ion-icon>
+      <ion-label>Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" href="/tabs/tab2">
+      <ion-icon aria-hidden="true" name="school-outline" color="light"></ion-icon>
+      <ion-label>Cursos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="extra" >
+      <ion-icon aria-hidden="true"  color="light"></ion-icon>
+      <ion-label></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab8" href="/tabs/tab8">
+      <ion-icon aria-hidden="true"name="file-tray-full-outline"color="light"></ion-icon>
+      <ion-label>Justificaciones</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab4" href="/tabs/tab4">
+      <ion-icon aria-hidden="true" name="person-circle-outline" color="light"></ion-icon>
+      <ion-label>Mi Perfil</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="primary" (click)="IR()">
+      <ion-icon name="qr-code-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-tabs>
+

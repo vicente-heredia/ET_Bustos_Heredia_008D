@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Bienvenida -->
+  <ion-card style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <div style="text-align: center; margin-top: 20px;">
+        <h2>¡Bienvenido a la App de Docentes!</h2>
+        <p style="font-size: 16px; color: #666;">Accede a tus clases, eventos, perfil y más.</p>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Carrusel dentro de una card -->
+  <ion-card style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); margin-top: 20px;">
+    <div class="carousel">
+      <img [src]="images[currentIndex]" alt="Carrusel de imágenes" style="width: 100%; height: auto;" />
+    </div>
+  </ion-card>
+
+  
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px;">
+    <!-- Clases -->
+    <ion-card (click)="mostrarClases()" class="nav-card">
+      <ion-card-content style="text-align: center;">
+        <ion-icon name="school-outline" size="large" color="tertiary"></ion-icon>
+        <h3>Clases</h3>
+        <p style="font-size: 14px; color: #666;">Gestiona tus clases y listas de asistencia.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="irAMiPerfil()" class="nav-card">
+      <ion-card-content style="text-align: center;">
+        <ion-icon name="person-circle-outline" size="large" color="primary"></ion-icon>
+        <h3>Mi Perfil</h3>
+        <p style="font-size: 14px; color: #666;">Administra tu información personal.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="IrAjustificaciones()" class="nav-card">
+      <ion-card-content style="text-align: center;">
+        <ion-icon name="book-outline" size="large" color="primary"></ion-icon>
+        <h3>Justificaciones</h3>
+        <p style="font-size: 14px; color: #666;">Revisa las justificaciones .</p>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card (click)="irAEscanearQR()" class="nav-card">
+      <ion-card-content style="text-align: center;">
+        <ion-icon name="qr-code-outline" size="large" color="success"></ion-icon>
+        <h3>Escanear QR</h3>
+        <p style="font-size: 14px; color: #666;">Escanea QR para registrar asistencia.</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+

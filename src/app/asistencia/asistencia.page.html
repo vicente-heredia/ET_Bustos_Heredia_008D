@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app" />
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Card con el nombre de la sección -->
+  <ion-card class="section-card">
+    <ion-card-header class="card-header">
+      <ion-card-title class="card-title">Sección: {{ nombreSeccion }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="card-content">
+      
+      <!-- Botón para abrir la cámara -->
+      <div class="centered-content">
+        <ion-button color="tertiary" shape="round" size="large" (click)="abrirCamara()">
+          <ion-icon name="camera-outline" slot="start"></ion-icon>
+          Abrir Cámara
+        </ion-button>
+      </div>
+
+      <!-- Mostrar los datos escaneados -->
+      <ion-list *ngIf="datosEscaneados.length > 0" class="datos-list">
+        <ion-item *ngFor="let dato of datosEscaneados">
+          {{ dato }}
+        </ion-item>
+      </ion-list>
+
+      <!-- Mensaje cuando no hay datos -->
+      <ng-template #sinDatos>
+        <p class="ion-text-center sin-datos-text">No hay datos guardados aún.</p>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

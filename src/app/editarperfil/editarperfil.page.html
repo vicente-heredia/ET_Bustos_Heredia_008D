@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Editar Información</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="user.username" name="username" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" [(ngModel)]="user.apellido" name="apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input type="email" [(ngModel)]="user.email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label>
+          <ion-input type="text" [(ngModel)]="user.rut" name="rut" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Imagen de perfil</ion-label>
+          <input type="file" (change)="onFileSelected($event)" />
+        </ion-item>
+        
+        <div style="display: flex; justify-content: space-between; margin-top: 16px;">
+          <ion-button expand="full" type="submit" style="flex: 1; margin-right: 8px;">Guardar Cambios</ion-button>
+          <ion-button expand="full" color="primary" (click)="Volver()" style="flex: 1; margin-left: 8px;">Volver</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

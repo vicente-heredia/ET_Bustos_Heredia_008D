@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card-header>
+    <ion-card-title>Lista de Alumnos</ion-card-title>
+  </ion-card-header>
+  <ion-list>
+    <ion-item *ngFor="let alumno of alumnos">
+      <ion-label class="nombre">{{ alumno.nombre }} {{ alumno.apellido }}</ion-label>
+      
+      <div class="seccion">
+        <ion-radio-group>
+          <ion-radio value="presente">
+            <ion-label>Presente</ion-label>
+          </ion-radio>
+          <ion-radio value="ausente">
+            <ion-label>Ausente</ion-label>
+          </ion-radio>
+          <ion-radio value="justificado">
+            <ion-label>Justificado</ion-label>
+          </ion-radio>
+        </ion-radio-group>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="primary">
+    Enviar lista
+  </ion-button>
+</ion-content>

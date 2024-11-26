@@ -1,0 +1,75 @@
+ion-card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  * {
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .logo-app {
+    margin-left: 10px;
+  }    
+
+
+  .profile-card {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+  }
+  
+  /* Centrado de la imagen del perfil */
+  .profile-img-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 120px; /* Tamaño ligeramente más grande */
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #f2f2f2;
+  }
+  
+  /* Estilo de los elementos del perfil */
+  ion-item {
+    margin-bottom: 10px;
+  }
+  
+  ion-label h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ion-text-color);
+  }
+  
+  ion-label p {
+    font-size: 14px;
+    color: var(--ion-text-color-shade);
+    margin-top: 5px;
+  }
+  
+  /* Botón de Editar Perfil */
+  .edit-button {
+    margin-top: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #ff9800; /* Naranja para el botón de editar */
+  }
+  
+  /* Botón de Cerrar Sesión */
+  .logout-button {
+    margin-top: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #e60000; /* Rojo vibrante para el botón */
+  }
+  
+  /* Título centrado de la tarjeta */
+  ion-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--ion-text-color);
+    text-align: center;
+  }

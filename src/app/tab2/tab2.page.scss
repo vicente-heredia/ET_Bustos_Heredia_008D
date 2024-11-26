@@ -1,0 +1,53 @@
+ion-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  * {
+    font-family: 'Franklin Gothic Medium', 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .logo-app {
+    margin-left: 10px;
+  }  
+
+  .logo-app {
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .custom-card {
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+  }
+  
+  ion-card-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #003b73; /* Un azul que resalta */
+  }
+  
+  ion-button {
+    font-size: 0.9em;
+    white-space: normal; /* Permite salto de línea en el texto */
+    text-align: center;
+  }
+  
+  ion-card-content {
+    padding: 20px 10px;
+  }
+  
+  ion-toolbar ion-title {
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  .centered-button {
+    width: 80%; /* Ajusta el tamaño del botón (puedes cambiar el 80% según el tamaño que desees) */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px; /* Aumenta el tamaño de la fuente del botón */
+    padding: 12px 20px; /* Ajusta el relleno para hacerlo más grande */
+  }
+  

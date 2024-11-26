@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app" />
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Botones de acciones -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Asistencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" color="tertiary" [routerLink]="['/tabs/tab3']">
+        Escanear QR para registrar asistencia
+      </ion-button>
+      <ion-button expand="block" color="primary" [routerLink]="['/lista']">
+        Pasar lista de forma manual
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de estudiantes -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lista de Estudiantes</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="full">
+        <ng-container *ngFor="let estudiante of estudiantes; let i = index">
+
+          <ion-item (click)="toggleNotas(i)">
+            <ion-avatar slot="start">
+              <ion-icon name="person-circle" style="font-size: 40px; color: #4CAF50;"></ion-icon>
+            </ion-avatar>
+            <ion-label>
+              <h2>{{ estudiante.nombre }}</h2>
+              <p>Promedio: <strong>{{ calcularPromedio(estudiante) }}</strong></p>
+            </ion-label>
+            <ion-icon
+              slot="end"
+              [name]="expandedIndex === i ? 'chevron-up-outline' : 'chevron-down-outline'"
+            ></ion-icon>
+          </ion-item>
+
+          <!-- Notas desplegables -->
+          <ion-grid *ngIf="expandedIndex === i" class="notas-container">
+            <ion-row *ngFor="let nota of estudiante.notas; let j = index">
+              <ion-col size="12">
+                <ion-card class="nota-card">
+                  <ion-card-content>
+                    <ion-label>
+                      <strong>Nota {{ j + 1 }}:</strong> {{ nota }}
+                    </ion-label>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ng-container>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

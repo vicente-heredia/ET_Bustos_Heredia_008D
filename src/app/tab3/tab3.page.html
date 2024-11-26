@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app" />
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Card con el mensaje inicial -->
+  <ion-card *ngIf="!mostrarSecciones" class="inicio-card">
+    <ion-card-header class="card-header">
+      <ion-card-title class="card-title">Inicie su proceso de escaneo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="centered-content">
+        <ion-button color="tertiary" shape="round" size="large" (click)="mostrarListaSecciones()">
+          <ion-icon name="camera-outline" slot="start"></ion-icon>
+          INICIAR
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de secciones dentro de una card después de iniciar -->
+  <ion-list *ngIf="mostrarSecciones" class="secciones-list">
+    <ion-card class="secciones-card">
+      <ion-card-header class="card-header">
+        <ion-card-title class="card-title">Seleccionar una Sección</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- Cards de cada sección -->
+        <ion-list>
+          <ion-item button *ngFor="let seccion of secciones" (click)="redirigir(seccion)">
+            {{ seccion }}
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <img src="assets/duoclogo.svg" class="logo-app">
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="end" name="menu-outline" size="large" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        Horario de {{ getDayName(selectedDay) }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-segment [(ngModel)]="selectedDay">
+        <ion-segment-button value="lunes">Lunes</ion-segment-button>
+        <ion-segment-button value="martes">Martes</ion-segment-button>
+        <ion-segment-button value="miércoles">Miércoles</ion-segment-button>
+        <ion-segment-button value="jueves">Jueves</ion-segment-button>
+        <ion-segment-button value="viernes">Viernes</ion-segment-button>
+      </ion-segment>
+
+      <ion-list style="margin-top: 20px;">
+        <ion-item *ngFor="let clase of getClassesForDay(selectedDay)">
+          <ion-icon name="school-outline" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            {{ clase }}
+          </ion-label>
+          <ion-badge slot="end" color="success" *ngIf="isCurrentClass(clase)">
+            En curso
+          </ion-badge>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Total de clases: {{ getClassesForDay(selectedDay).length }}
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
