@@ -4,10 +4,10 @@ https://github.com/vicente-heredia/ApiTestData.git
 
 Dependencias para App Estudiante
 -npm install Swiper@8
--npm install angularqr code--save
+-npm install angularx-qrcode --save
 
 Dependencias Para App Docente
 -npm install Swiper@8
--npm install
+-npm install (no recuerdo el software de la camara)
 
 
